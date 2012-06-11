@@ -15,11 +15,12 @@
 #include <unistd.h>
 
 static int
-list_directory(const char *dir, uint64_t offset, uint64_t nfiles)
+list_directory(const char *dir,
+    unsigned long long offset, unsigned long long nfiles)
 {
 	DIR *dirp;
 	dirent_t *dp;
-	uint64_t index = 0, nprinted = 0;
+	unsigned long long index = 0, nprinted = 0;
 
 	if ((dirp = opendir(dir)) == NULL) {
 		fprintf(stderr, "failed to list '%s': %s\n",
@@ -66,7 +67,7 @@ main(int argc, char *argv[])
 	extern char *optarg;
 	char c;
 
-	uint64_t offset = 0, nfiles = 0;
+	unsigned long long offset = 0, nfiles = 0;
 	int ii, rv;
 
 	errno = 0;
