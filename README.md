@@ -28,6 +28,14 @@ stream will not change in subsequent invocations as long as the contents of the
 directory are the same.
 
 
+## Status
+
+lls has been compiled and tested on SmartOS, a distribution of the
+[illumos](http://github.com/illumos/illumos-gate) operating system.  The work to
+port it to other platforms involves reconciling the various struct dirent
+definitions, and while that work isn't hard, it won't work as is.
+
+
 ## License
 
 MIT.
