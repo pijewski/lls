@@ -72,7 +72,7 @@ main(int argc, char *argv[])
 
 	errno = 0;
 
-	while ((c = getopt(argc, argv, "d:n:o:rs:")) != EOF) {
+	while ((c = getopt(argc, argv, "n:o:")) != EOF) {
 		switch (c) {
 		case 'n':
 			nfiles = atoll(optarg);
