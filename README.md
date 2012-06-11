@@ -28,6 +28,31 @@ stream will not change in subsequent invocations as long as the contents of the
 directory are the same.
 
 
+## Performance
+
+	# time /usr/bin/amd64/ls -1 | wc -l  
+	 32783927
+	
+	real	11m27.115s
+	user	10m3.117s
+	sys	1m20.608s
+	# time /usr/bin/amd64/ls -U1 | wc -l  
+	 32783927
+	
+	real	2m24.796s
+	user	0m58.586s
+	sys	1m21.492s
+	# time lls | wc -l  
+	 32783927
+	
+	real	0m15.833s
+	user	0m5.750s
+	sys	0m13.713s
+
+During the above tests, ls(1) consumed over 20 GB of memory at its highest.  lls
+was steady with about 1.5 KB of memory used.
+
+
 ## Status
 
 lls has been compiled and tested on SmartOS, a distribution of the
