@@ -4,9 +4,7 @@
  * lls.c: lightweight version of ls(1)
  *
  * This simple tool lists files in a directory without all the bells and
- * whistles of ls(1).  It doesn't need to buffer all of the dirents in memory,
- * thereby reducing its memory usage to a few hundred kilobytes.  ls(1) can
- * consume tens of gigabytes given a directory with millions of objects.
+ * whistles of ls(1).
  */
 
 #include <dirent.h>
@@ -21,7 +19,7 @@ list_directory(const char *dir, uint64_t offset, uint64_t nfiles)
 {
 	DIR *dirp;
 	dirent_t *dp;
-	uint64_t index = 0, listed = 0;
+	uint64_t index = 0, nprinted = 0;
 
 	if ((dirp = opendir(dir)) == NULL) {
 		fprintf(stderr, "failed to list '%s': %s\n",
@@ -52,7 +50,7 @@ list_directory(const char *dir, uint64_t offset, uint64_t nfiles)
 
 		printf("%s\n", dp->d_name);
 
-		if (nfiles > 0 && ++listed == nfiles)
+		if (nfiles > 0 && ++nprinted == nfiles)
 			break;
 	}
 
