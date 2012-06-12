@@ -32,19 +32,18 @@ directory are the same.
 
 	# time /usr/bin/amd64/ls -1 | wc -l  
 	 32783927
-	
 	real	11m27.115s
 	user	10m3.117s
 	sys	1m20.608s
+
 	# time /usr/bin/amd64/ls -U1 | wc -l  
 	 32783927
-	
 	real	2m24.796s
 	user	0m58.586s
 	sys	1m21.492s
+
 	# time lls | wc -l  
 	 32783927
-	
 	real	0m15.833s
 	user	0m5.750s
 	sys	0m13.713s

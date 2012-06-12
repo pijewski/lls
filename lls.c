@@ -1,7 +1,7 @@
 /*
  * Copyright (c) 2012, Bill Pijewski. All rights reserved.
  *
- * lls.c: lightweight version of ls(1)
+ * lls.c: lightweight ls(1) replacement
  *
  * This simple tool lists files in a directory without all the bells and
  * whistles of ls(1).
